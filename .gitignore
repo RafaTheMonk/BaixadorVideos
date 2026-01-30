@@ -22,7 +22,13 @@ build/
 Thumbs.db
 
 # Project
-downloads_x/
+downloads_videos/
 *.mp4
 *.webm
 .claude/
+
+# Secrets
+.env
+.env.*
+*.key
+*.pem
