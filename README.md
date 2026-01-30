@@ -11,8 +11,8 @@ Script simples para baixar videos do X (antigo Twitter) usando yt-dlp.
 ## Instalacao
 
 ```bash
-git clone https://github.com/seu-usuario/xdownload.git
-cd xdownload
+git clone git@github.com:RafaTheMonk/BaixadorVideos.git
+cd BaixadorVideos
 pip install -r requirements.txt
 ```
 
