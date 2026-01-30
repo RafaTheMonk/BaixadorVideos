@@ -1,12 +1,18 @@
 # XDownload
 
-Script simples para baixar videos do X (antigo Twitter) usando yt-dlp.
+CLI para baixar videos de redes sociais usando yt-dlp.
+
+## Plataformas Suportadas
+
+- Twitter/X
+
+Quer adicionar mais? Veja [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Requisitos
 
 - Python 3.10+
 - yt-dlp
-- ffmpeg (para processamento de video)
+- ffmpeg
 
 ## Instalacao
 
@@ -35,7 +41,7 @@ brew install ffmpeg
 
 ## Uso
 
-Baixar video:
+Baixar video (detecta plataforma automaticamente):
 ```bash
 python xdownload.py https://x.com/usuario/status/123456789
 ```
@@ -45,14 +51,30 @@ Ver formatos disponiveis:
 python xdownload.py --formatos https://x.com/usuario/status/123456789
 ```
 
-Os videos sao salvos em `~/downloads_x/`.
+Listar plataformas suportadas:
+```bash
+python xdownload.py --plataformas
+```
 
-## Como funciona
+Os videos sao salvos em `~/downloads_videos/`.
 
-1. yt-dlp faz requisicao para a API do Twitter/X
-2. Extrai metadados do tweet (titulo, formatos disponiveis)
-3. Baixa o stream de video na melhor qualidade
-4. Se necessario, usa ffmpeg para mesclar audio e video
+## Estrutura
+
+```
+BaixadorVideos/
+├── downloaders/
+│   ├── __init__.py    # Registro de downloaders
+│   ├── base.py        # Classe base
+│   └── twitter.py     # Twitter/X
+├── xdownload.py       # CLI
+├── requirements.txt
+├── CONTRIBUTING.md    # Guia para contribuir
+└── README.md
+```
+
+## Contribuindo
+
+Veja [CONTRIBUTING.md](CONTRIBUTING.md) para instrucoes de como adicionar suporte a novas plataformas.
 
 ## Licenca
 
